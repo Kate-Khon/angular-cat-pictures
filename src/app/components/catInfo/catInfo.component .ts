@@ -29,7 +29,7 @@ export class CatInfoComponent {
         this.catPics.push(catData.url);
 
         if (catData.breeds[0]) {
-          const { name, description, cfa_url} = catData.breeds[0];
+          const { name, description, cfa_url } = catData.breeds[0];
 
           this.name = name;
           this.description = description;
