@@ -1,0 +1,19 @@
+.page {
+  min-height: 100vh;
+  background-color: rgb(253, 198, 207);
+  border: 1px solid transparent;
+}
+
+.filter {
+  margin: 50px auto;
+  width: fit-content;
+
+  &__title {
+    margin: 50px auto;
+    width: fit-content;
+  }
+
+  &__form {
+    padding: 0 20px;
+  }
+}

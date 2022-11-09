@@ -1,0 +1,32 @@
+<div class="bubbles" *ngIf="loading">
+  <span class="bubbles__bubble"></span>
+  <span class="bubbles__bubble" id="bubble2"></span>
+  <span class="bubbles__bubble" id="bubble3"></span>
+</div>
+
+
+<div class="details" *ngIf="breed && !loading">
+  <h3 class="details__title">{{ name }}</h3>
+  <span class="details__description">{{ description }}</span>
+  <a
+    mat-flat-button
+    color="primary"
+    class="details__link"
+    [href]="link"
+    target="_blank"
+    *ngIf="link"
+    >
+      Learn more
+    </a>
+</div>
+
+
+<div class="container">
+  <div class="picture" *ngFor="let catPic of catPics">
+    <img
+      class="picture__content"
+      [src]="catPic"
+      alt="cat image"
+    >
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="page">
+  <section class="filter">
+    <h1 class="filter__title">{{ title }}</h1>
+
+    <mat-form-field class="filter__form">
+      <mat-label>Breed</mat-label>
+      <mat-select [(value)]="breed">
+        <mat-option
+          *ngFor="let cat of catList; let i = index"
+          [value]="catIdList[i]"
+        >
+          {{ cat }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="filter__form">
+      <mat-label>Number of results</mat-label>
+      <mat-select [(value)]="limit">
+        <mat-option *ngFor="let i of [1, 2, 4, 6, 8, 10, 12]" [value]="i">
+          {{ i }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </section>
+
+  <app-catInfo [breed]="breed" [limit]="limit"></app-catInfo>
+</div>

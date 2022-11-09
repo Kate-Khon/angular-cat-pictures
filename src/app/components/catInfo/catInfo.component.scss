@@ -1,0 +1,100 @@
+$terra-rosa: #FE576C;
+
+/* Mixins */
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+.bubbles {
+  margin: auto;
+  width: max-content;
+
+  &__bubble {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    margin: 150px auto;
+    background: $terra-rosa;
+
+    @include border-radius(50%);
+    animation: bubbly 0.9s infinite alternate;
+  }
+}
+
+/* Bubbles */
+#bubble2 { animation-delay: 0.27s; }
+#bubble3 { animation-delay: 0.54s; }
+
+@keyframes bubbly {
+  0% {
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+    opacity: 0.1;
+    transform: translateY(-32px);
+  }
+}
+
+.details {
+  margin: auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  background-color: rgb(255, 221, 227);
+  border-radius: 58px;
+
+  &__title {
+    width: fit-content;
+  }
+
+  &__description {
+    margin-bottom: 20px;
+    width: 500px;
+    text-align: justify;
+	  text-align-last: center;
+  }
+
+  &__link {
+    display: block;
+  }
+}
+
+.container {
+  margin: 30px auto;
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.picture {
+  display: inline-flex;
+  padding: 30px;
+  width: 300px;
+  height: 300px;
+  border-radius: 58px;
+  background-color: rgb(255, 221, 227);
+  transition: transform 0.3s, background-color 0.5s;
+
+  &__content {
+    margin: auto;
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 58px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: rgb(248, 143, 162);
+  }
+}
