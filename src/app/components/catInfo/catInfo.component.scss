@@ -65,6 +65,12 @@ $terra-rosa: #FE576C;
 
   &__link {
     display: block;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: rgb(248, 143, 162);
+    }
   }
 }
 

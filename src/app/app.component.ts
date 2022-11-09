@@ -8,7 +8,6 @@ import { CatService, breedsData } from './services/cat.service';
 })
 export class AppComponent implements OnInit {
   title = 'Cat Pictures';
-  catsData = {};
   catList: string[] = ['All'];
   catIdList: string[] = [''];
   breed: string = '';
@@ -19,11 +18,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.catService.getCatBreeds().subscribe((cats) => {
-      this.catsData = cats;
-
       Object.values(cats).map((cat: breedsData) => {
         const { name, id } = cat;
-
+        
         this.catList.push(name);
         this.catIdList.push(id);
       });
